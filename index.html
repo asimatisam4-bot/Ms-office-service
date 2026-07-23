@@ -157,7 +157,7 @@
     .btn-wa{ border-color:#3e7a52; background:#3e7a52; color:#fdfaf1; }
     .btn-wa:hover{ background:#336a45; }
 
-    /* ---------- Photo (square, scanner-frame with timed reveal) ---------- */
+    /* ---------- Photo ---------- */
     .photo-frame{
       position:relative; width:min(380px, 100%); margin:0 auto; justify-self:center;
     }
@@ -174,7 +174,6 @@
     .photo-square.revealed img{
       transform: scale(1.1);
     }
-    /* corner brackets, viewfinder style */
     .bracket{ position:absolute; width:26px; height:26px; z-index:3; }
     .bracket::before, .bracket::after{ content:""; position:absolute; background:var(--gold); }
     .bracket-tl{ top:14px; left:14px; }
@@ -232,7 +231,7 @@
     }
     .section-label .rule{ height:1px; background:var(--line); flex:1; }
 
-    /* ---------- Services grid (index cards) ---------- */
+    /* ---------- Services grid ---------- */
     .services{ padding: 20px 0 70px; }
     .services-grid{
       display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
@@ -334,10 +333,6 @@
     .env-box{
       border:1.5px solid var(--ink); padding:24px; position:relative; background:var(--paper-white);
     }
-    .env-box::before{
-      content:""; position:absolute; top:0; left:0; right:0; height:0;
-      border-left:1.5px solid transparent; border-right:1.5px solid transparent;
-    }
     .env-box .flap{
       position:absolute; top:-1px; left:-1.5px; right:-1.5px; height:56px;
       background: linear-gradient(135deg, transparent 49.4%, var(--line) 49.6%, var(--line) 50.4%, transparent 50.6%),
@@ -425,7 +420,7 @@
           <p class="lede">I'm Atisam — I turn messy spreadsheets, rough drafts and half-built slide decks into clean, client-ready work. Six services, three ways to book each one, and a reply on WhatsApp usually within the hour.</p>
           <div class="hero-ctas">
             <a class="btn btn-solid" href="#services" onclick="scrollToServices(event)">View Services</a>
-            <a class="btn btn-wa" id="hero-wa" href="#" target="_blank" rel="noopener">
+            <a class="btn btn-wa" id="hero-wa" href="https://wa.me/923134228127" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.58-.5-.5-.68-.51h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.07-.13-.27-.2-.57-.35z" fill="#fdfaf1"/><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.08L2 22l5.06-1.33A9.96 9.96 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.1c-1.68 0-3.25-.46-4.6-1.26l-.33-.2-3 .79.8-2.93-.21-.3A8.1 8.1 0 0 1 3.9 12c0-4.48 3.65-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.1-8.1 8.1z" fill="#fdfaf1"/></svg>
               Message on WhatsApp
             </a>
@@ -506,9 +501,9 @@
 
       <div class="wa-box">
         <div class="label">Fastest Response (WhatsApp)</div>
-        <div class="value">+92 345 6633325</div>
+        <div class="value">+92 313 4228127</div>
         <div class="sub">Need a quick answer or want to send audio notes explaining your document? Message me directly on WhatsApp.</div>
-        <a class="btn btn-wa" id="d-wa-btn" href="#" target="_blank" rel="noopener">
+        <a class="btn btn-wa" id="d-wa-btn" href="https://wa.me/923134228127" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.58-.5-.5-.68-.51h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.07-.13-.27-.2-.57-.35z" fill="#fdfaf1"/><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.08L2 22l5.06-1.33A9.96 9.96 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.1c-1.68 0-3.25-.46-4.6-1.26l-.33-.2-3 .79.8-2.93-.21-.3A8.1 8.1 0 0 1 3.9 12c0-4.48 3.65-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.1-8.1 8.1z" fill="#fdfaf1"/></svg>
           Start WhatsApp Chat
         </a>
@@ -521,14 +516,14 @@
 <footer>
   <div class="wrap footer-inner">
     <p>&copy; 2026 M. Atisam Asim &bull; All Rights Reserved</p>
-    <p>Lahore, Pakistan &bull; asimatisam4@gmail.com &bull; +92 345 6633325</p>
+    <p>Lahore, Pakistan &bull; asimatisam4@gmail.com &bull; +92 313 4228127</p>
   </div>
 </footer>
 
 <div class="toast" id="toast">Copied to clipboard!</div>
 
 <script>
-  const PHONE = "923456633325";
+  const PHONE = "923134228127";
   const EMAIL = "asimatisam4@gmail.com";
 
   const SERVICES = [
@@ -590,218 +585,126 @@
       title: "Data Entry & Document Digitization",
       short: "Accurate typing, data transfer from PDFs/images to Excel, web research gathering, and CRM updates.",
       icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg>`,
-      desc: "High-accuracy manual data entry into Excel, Google Sheets, or web databases from hand-written notes, invoices, receipts, property lists, or online directories.",
+      desc: "High-accuracy manual data entry into Excel, Google Sheets, or web databases from hand-written notes, invoices, receipts, and property listings.",
       packages: [
-        { tier: "Small Batch", price: "$15", unit: "Up to 2 hours of work", features: ["Copy-paste & manual typing", "Basic cleanup included", "99%+ accuracy check", "1 Day Delivery"], featured: false },
-        { tier: "Standard Batch", price: "$35", unit: "Up to 5 hours of work", features: ["Everything in Small Batch", "Web research & contact gathering", "Organized Excel structure", "2 Days Delivery"], featured: true },
-        { tier: "Large Digitization", price: "$75", unit: "Up to 12 hours of work", features: ["Everything in Standard", "Multi-source data synthesis", "Verification & validation", "4 Days Delivery"], featured: false }
-      ]
-    },
-    {
-      id: "typing-copyediting",
-      num: "06",
-      title: "Urgent Typing & Proofreading",
-      short: "Fast document typing from audio/handwriting + grammar, spell-check, and structural polishing.",
-      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>`,
-      desc: "Need text typed up fast from handwritten pages, images, or clear audio notes? I provide fast turnaround typing with accurate spelling, grammar, and punctuation checks.",
-      packages: [
-        { tier: "Quick Proof & Type", price: "$10", unit: "Up to 1,500 words", features: ["Fast retyping", "Spelling & grammar correction", "Standard margins & fonts", "1 Day Delivery"], featured: false },
-        { tier: "Standard Polish", price: "$25", unit: "Up to 4,000 words", features: ["Everything in Quick", "Sentence flow & clarity tuning", "Consistent terminology", "2 Days Delivery"], featured: true },
-        { tier: "Express Heavy Document", price: "$50", unit: "Up to 10,000 words", features: ["Everything in Standard", "Fast turnaround priority", "Track Changes version provided", "3 Days Delivery"], featured: false }
+        { tier: "Quick Entry", price: "$15", unit: "Up to 2 hours of work", features: ["Manual typing with high accuracy", "Basic data verification", "Clean Excel export", "1 Day Delivery"], featured: false },
+        { tier: "Standard Digitization", price: "$35", unit: "Up to 5 hours of work", features: ["Invoice / Receipt data entry", "Web research & lead list compilation", "Double-check for 100% accuracy", "2 Days Delivery"], featured: true },
+        { tier: "Ongoing Entry Project", price: "$80", unit: "Up to 12 hours of work", features: ["Dedicated daily data entry support", "Database management", "Custom formatting templates", "3 Days Delivery"], featured: false }
       ]
     }
   ];
 
-  function buildWaLink(text) {
-    return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(text);
-  }
-
-  function initHeroWa() {
-    const link = document.getElementById('hero-wa');
-    if (link) {
-      link.href = buildWaLink("Hello Atisam! I saw your MS Office portfolio website and would like to inquire about your services.");
-    }
-  }
-
-  function renderServices() {
-    const grid = document.getElementById('servicesGrid');
-    if (!grid) return;
-    grid.innerHTML = SERVICES.map(s => `
-      <div class="service-card" onclick="openDetail('${s.id}')">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span class="idx">SERVICE // ${s.num}</span>
-          <div class="icon">${s.icon}</div>
-        </div>
-        <h3>${s.title}</h3>
-        <p>${s.short}</p>
-        <div class="go">
-          View Packages &amp; Pricing
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
+  // Render Services Grid
+  const gridEl = document.getElementById('servicesGrid');
+  SERVICES.forEach((s) => {
+    const card = document.createElement('div');
+    card.className = 'service-card';
+    card.onclick = () => openService(s.id);
+    card.innerHTML = `
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="idx">FILE NO. ${s.num}</span>
+        <div class="icon">${s.icon}</div>
       </div>
-    `).join('');
+      <h3>${s.title}</h3>
+      <p>${s.short}</p>
+      <div class="go">
+        View Packages 
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    `;
+    gridEl.appendChild(card);
+  });
+
+  // Reveal Animations & Theme Toggle Logic
+  function initPage() {
+    // Theme setup
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Hero image reveal animation
+    setTimeout(() => {
+      document.getElementById('photoSquare')?.classList.add('revealed');
+      document.getElementById('photoFrame')?.classList.add('revealed');
+    }, 200);
+
+    // Intersection observer for cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('in-view');
+          }, idx * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card').forEach(c => observer.observe(c));
   }
 
-  function openDetail(id) {
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+
+  function scrollToServices(e) {
+    e.preventDefault();
+    document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function openService(id) {
     const s = SERVICES.find(item => item.id === id);
     if (!s) return;
 
-    document.getElementById('d-file').textContent = `FILE NO. ${s.num} // ${s.id.toUpperCase()}`;
-    document.getElementById('d-title').textContent = s.title;
-    document.getElementById('d-desc').textContent = s.desc;
+    document.getElementById('d-file').innerText = `FILE NO. ${s.num}`;
     document.getElementById('d-icon').innerHTML = s.icon;
+    document.getElementById('d-title').innerText = s.title;
+    document.getElementById('d-desc').innerText = s.desc;
 
-    const pkgContainer = document.getElementById('d-packages');
-    pkgContainer.innerHTML = s.packages.map(p => {
-      const msg = `Hi Atisam, I'd like to book the *${p.tier}* package for *${s.title}* (${p.price}).`;
-      const waUrl = buildWaLink(msg);
-      return `
-        <div class="package ${p.featured ? 'featured' : ''}">
-          <div class="tier">${p.tier}</div>
-          <div class="price">${p.price}</div>
-          <div class="unit">${p.unit}</div>
-          <ul>
-            ${p.features.map(f => `
-              <li>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>${f}</span>
-              </li>
-            `).join('')}
-          </ul>
-          <a class="btn ${p.featured ? 'btn-solid' : 'btn-ghost'}" href="${waUrl}" target="_blank" rel="noopener">
-            Book Package via WA
-          </a>
-        </div>
+    const pkgsEl = document.getElementById('d-packages');
+    pkgsEl.innerHTML = '';
+
+    s.packages.forEach(p => {
+      const pkg = document.createElement('div');
+      pkg.className = `package ${p.featured ? 'featured' : ''}`;
+      
+      const checkIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>`;
+      
+      pkg.innerHTML = `
+        <div class="tier">${p.tier}</div>
+        <div class="price">${p.price}</div>
+        <div class="unit">${p.unit}</div>
+        <ul>
+          ${p.features.map(f => `<li>${checkIcon} <span>${f}</span></li>`).join('')}
+        </ul>
+        <a class="btn ${p.featured ? 'btn-solid' : 'btn-ghost'}" href="https://wa.me/${PHONE}?text=${encodeURIComponent(`Hi Atisam, I want to book the '${p.tier}' package for '${s.title}'.`)}" target="_blank" rel="noopener">
+          Book This Package
+        </a>
       `;
-    }).join('');
-
-    const generalMsg = `Hi Atisam, I am interested in your service: *${s.title}*. I have a document I'd like to discuss.`;
-    document.getElementById('d-wa-btn').href = buildWaLink(generalMsg);
-    document.getElementById('d-email-btn').href = `mailto:${EMAIL}?subject=` + encodeURIComponent(`Inquiry: ${s.title}`);
+      pkgsEl.appendChild(pkg);
+    });
 
     document.getElementById('home').classList.add('hidden');
     document.getElementById('detail').classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    history.pushState({ page: 'detail', id: id }, '', `#${id}`);
   }
 
   function goHome() {
     document.getElementById('detail').classList.remove('active');
     document.getElementById('home').classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (location.hash) history.pushState({}, '', window.location.pathname);
-  }
-
-  function scrollToServices(e) {
-    e.preventDefault();
-    if (document.getElementById('home').classList.contains('hidden')) {
-      goHome();
-      setTimeout(scroll, 100);
-    } else {
-      scroll();
-    }
-    function scroll() {
-      const el = document.getElementById('services');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
   }
 
   function copyEmail() {
     navigator.clipboard.writeText(EMAIL).then(() => {
-      showToast("Email copied to clipboard!");
-    }).catch(() => {
-      showToast("Email: " + EMAIL);
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
     });
   }
 
-  function showToast(txt) {
-    const t = document.getElementById('toast');
-    t.textContent = txt;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 2800);
-  }
-
-  /* Dark mode toggle */
-  function toggleTheme() {
-    const html = document.documentElement;
-    const current = html.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('maa_theme', next);
-    updateThemeIcon(next);
-  }
-
-  function updateThemeIcon(theme) {
-    const icon = document.getElementById('themeIcon');
-    if (!icon) return;
-    if (theme === 'dark') {
-      icon.innerHTML = `<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="#faf7ef" stroke-width="1.8" fill="none"/>`;
-    } else {
-      icon.innerHTML = `<circle cx="12" cy="12" r="4.5" stroke="#faf7ef" stroke-width="1.8"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.5 1.5M18.3 18.3l1.5 1.5M2 12h2.2M19.8 12H22M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5" stroke="#faf7ef" stroke-width="1.8" stroke-linecap="round"/>`;
-    }
-  }
-
-  /* Photo scanner animation trigger */
-  function initPhotoReveal() {
-    const sq = document.getElementById('photoSquare');
-    if (sq) {
-      setTimeout(() => sq.classList.add('revealed'), 400);
-    }
-  }
-
-  /* Intersection observer for service card entrance */
-  function initCardObserver() {
-    const cards = document.querySelectorAll('.service-card');
-    if (!('IntersectionObserver' in window)) {
-      cards.forEach(c => c.classList.add('in-view'));
-      return;
-    }
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('in-view'), i * 80);
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    cards.forEach(c => obs.observe(c));
-  }
-
-  /* On load setup */
-  window.addEventListener('DOMContentLoaded', () => {
-    // restore theme
-    const saved = localStorage.getItem('maa_theme') || 'light';
-    document.documentElement.setAttribute('data-theme', saved);
-    updateThemeIcon(saved);
-
-    renderServices();
-    initHeroWa();
-    initPhotoReveal();
-    initCardObserver();
-
-    // handle hash navigation
-    if (window.location.hash) {
-      const cleanHash = window.location.hash.replace('#', '');
-      if (cleanHash === 'services') {
-        // scroll down
-        setTimeout(() => {
-          const el = document.getElementById('services');
-          if (el) el.scrollIntoView();
-        }, 300);
-      } else {
-        const match = SERVICES.find(s => s.id === cleanHash);
-        if (match) openDetail(cleanHash);
-      }
-    }
-  });
-
-  window.addEventListener('popstate', (e) => {
-    if (e.state && e.state.page === 'detail' && e.state.id) {
-      openDetail(e.state.id);
-    } else {
-      goHome();
-    }
-  });
+  window.addEventListener('DOMContentLoaded', initPage);
 </script>
 
 </body>
