@@ -588,123 +588,102 @@
       desc: "High-accuracy manual data entry into Excel, Google Sheets, or web databases from hand-written notes, invoices, receipts, and property listings.",
       packages: [
         { tier: "Quick Entry", price: "$15", unit: "Up to 2 hours of work", features: ["Manual typing with high accuracy", "Basic data verification", "Clean Excel export", "1 Day Delivery"], featured: false },
-        { tier: "Standard Digitization", price: "$35", unit: "Up to 5 hours of work", features: ["Invoice / Receipt data entry", "Web research & lead list compilation", "Double-check for 100% accuracy", "2 Days Delivery"], featured: true },
-        { tier: "Ongoing Entry Project", price: "$80", unit: "Up to 12 hours of work", features: ["Dedicated daily data entry support", "Database management", "Custom formatting templates", "3 Days Delivery"], featured: false }
+        { tier: "Standard Digitization", price: "$35", unit: "Up to 5 hours of work", features: ["Manual typing & cross-validation", "Custom spreadsheet formatting", "Categorization & tagging", "2 Days Delivery"], featured: true }
       ]
     }
   ];
 
-  // Render Services Grid
-  const gridEl = document.getElementById('servicesGrid');
-  SERVICES.forEach((s) => {
-    const card = document.createElement('div');
-    card.className = 'service-card';
-    card.onclick = () => openService(s.id);
-    card.innerHTML = `
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <span class="idx">FILE NO. ${s.num}</span>
-        <div class="icon">${s.icon}</div>
-      </div>
-      <h3>${s.title}</h3>
-      <p>${s.short}</p>
-      <div class="go">
-        View Packages 
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-    `;
-    gridEl.appendChild(card);
-  });
-
-  // Reveal Animations & Theme Toggle Logic
-  function initPage() {
-    // Theme setup
-    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', savedTheme);
-
-    // Hero image reveal animation
-    setTimeout(() => {
-      document.getElementById('photoSquare')?.classList.add('revealed');
-      document.getElementById('photoFrame')?.classList.add('revealed');
-    }, 200);
-
-    // Intersection observer for cards
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, idx) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('in-view');
-          }, idx * 80);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.service-card').forEach(c => observer.observe(c));
-  }
-
+  // UI Interactivity Functions
   function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
   }
 
   function scrollToServices(e) {
     e.preventDefault();
-    document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  function openService(id) {
-    const s = SERVICES.find(item => item.id === id);
-    if (!s) return;
-
-    document.getElementById('d-file').innerText = `FILE NO. ${s.num}`;
-    document.getElementById('d-icon').innerHTML = s.icon;
-    document.getElementById('d-title').innerText = s.title;
-    document.getElementById('d-desc').innerText = s.desc;
-
-    const pkgsEl = document.getElementById('d-packages');
-    pkgsEl.innerHTML = '';
-
-    s.packages.forEach(p => {
-      const pkg = document.createElement('div');
-      pkg.className = `package ${p.featured ? 'featured' : ''}`;
-      
-      const checkIcon = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>`;
-      
-      pkg.innerHTML = `
-        <div class="tier">${p.tier}</div>
-        <div class="price">${p.price}</div>
-        <div class="unit">${p.unit}</div>
-        <ul>
-          ${p.features.map(f => `<li>${checkIcon} <span>${f}</span></li>`).join('')}
-        </ul>
-        <a class="btn ${p.featured ? 'btn-solid' : 'btn-ghost'}" href="https://wa.me/${PHONE}?text=${encodeURIComponent(`Hi Atisam, I want to book the '${p.tier}' package for '${s.title}'.`)}" target="_blank" rel="noopener">
-          Book This Package
-        </a>
-      `;
-      pkgsEl.appendChild(pkg);
-    });
-
-    document.getElementById('home').classList.add('hidden');
-    document.getElementById('detail').classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById("services").scrollIntoView({ behavior: 'smooth' });
   }
 
   function goHome() {
-    document.getElementById('detail').classList.remove('active');
-    document.getElementById('home').classList.remove('hidden');
+    document.getElementById("detail").classList.remove("active");
+    document.getElementById("home").classList.remove("hidden");
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  function showToast(msg) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 2200);
+  }
+
   function copyEmail() {
-    navigator.clipboard.writeText(EMAIL).then(() => {
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2500);
+    navigator.clipboard.writeText(EMAIL).then(() => showToast("Email address copied!"));
+  }
+
+  // Render Services
+  const grid = document.getElementById("servicesGrid");
+  if(grid) {
+    SERVICES.forEach(s => {
+      const card = document.createElement("div");
+      card.className = "service-card in-view";
+      card.innerHTML = `
+        <div class="idx">FILE NO. ${s.num}</div>
+        <div class="icon">${s.icon}</div>
+        <h3>${s.title}</h3>
+        <p>${s.short}</p>
+        <div class="go">View Packages <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      `;
+      card.onclick = () => openService(s.id);
+      grid.appendChild(card);
     });
   }
 
-  window.addEventListener('DOMContentLoaded', initPage);
+  function openService(id) {
+    const s = SERVICES.find(x => x.id === id);
+    if(!s) return;
+    document.getElementById("d-file").textContent = `FILE NO. ${s.num}`;
+    document.getElementById("d-icon").innerHTML = s.icon;
+    document.getElementById("d-title").textContent = s.title;
+    document.getElementById("d-desc").textContent = s.desc;
+
+    const pkgs = document.getElementById("d-packages");
+    pkgs.innerHTML = "";
+    s.packages.forEach(p => {
+      const div = document.createElement("div");
+      div.className = `package ${p.featured ? 'featured' : ''}`;
+      div.innerHTML = `
+        <div class="tier">${p.tier}</div>
+        <div class="price">${p.price}</div>
+        <div class="unit">${p.unit}</div>
+        <ul>${p.features.map(f => `<li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>${f}</li>`).join('')}</ul>
+        <a class="btn ${p.featured ? 'btn-solid' : 'btn-ghost'}" href="https://wa.me/${PHONE}?text=${encodeURIComponent(`Hi Atisam, I want to book the ${p.tier} package for ${s.title}.`)}" target="_blank" rel="noopener">Book This Package</a>
+      `;
+      pkgs.appendChild(div);
+    });
+
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("detail").classList.add("active");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Photo Animation
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const sq = document.getElementById("photoSquare");
+      if(sq) sq.classList.add("revealed");
+    }, 400);
+  });
+</script>
+
+<!-- Retell AI Voice Call Widget for Atisam MS Office Services -->
+<script src="https://cdn.retellai.com/widget/v1/widget.js"></script>
+<script>
+  initRetellWidget({
+    publicKey: "public_key_8b075bd6e2a7c3d1e9119",
+    agentId: "agent_8013b16a27480e22d7f2d812fc"
+  });
 </script>
 
 </body>
